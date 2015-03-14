@@ -1,0 +1,3 @@
+core = "7.x"
+description = "A module to add in the ability to create reviews on a site."
+name = "Reviews"
