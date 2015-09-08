@@ -1,0 +1,12 @@
+<?php
+
+function reviews_entity_view($entity, $type, $view_mode, $langcode) {
+  if($type=='node'){
+    if(in_array($entity->type, array('landlord','property','tenant'))){
+      $entity->content['links']['node']['#links']['review']=array(
+        'title' => t('!prefix Review !suffix', array('!prefix' => '<a href="/node/add/review?field_reviewed_item='.$entity->nid.'"><i class="fa fa-pencil-square-o"></i>', '!suffix' => '</a>')),
+        'html' => TRUE,
+      );
+    }
+  }
+}
